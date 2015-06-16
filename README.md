@@ -6,4 +6,5 @@ This is a simple sign-in sheet for a sports club I work for. It can be used as a
 Since the CSV folder contains the .CSV files that log the players for each day it's extrememly important that this folder is a protected directory. This is admin data that others should not be downloading and using. Your webhost should be able to provide you with this option.
 
 SignIn.php - web form that takes in guest information
+
 PlayerLog.php - Reads the .CSV file for the day and displays the guests info that have signed in for the day. Links to SignIn.php
