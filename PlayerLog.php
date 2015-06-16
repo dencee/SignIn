@@ -31,8 +31,9 @@
       </tr>
 <?php
    date_default_timezone_set('America/Los_Angeles');
+   $directory = "CSV/";
    $date = getdate( date("U") );
-   $fName = $date[month] . "_" . $date[mday] . "_" . $date[year] . ".csv";
+   $fName = $directory . $date[month] . "_" . $date[mday] . "_" . $date[year] . ".csv";
    $file = fopen( $fName, "r" );
 
    // Read .csv file and populate html table with its contents; each cell

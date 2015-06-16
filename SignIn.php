@@ -37,8 +37,9 @@ if($_POST['submit'] == "Submit Form")
 	}
 	else {
 	   date_default_timezone_set('America/Los_Angeles');
+	   $directory = "CSV/";
        $date = getdate( date("U") );
-       $fName = $date[month] . "_" . $date[mday] . "_" . $date[year] . ".csv";
+       $fName = $directory . $date[month] . "_" . $date[mday] . "_" . $date[year] . ".csv";
 	   $SignTime = date( "F j Y h:i:s A" );
 	   
        $pSignIn = fopen( $fName, "a" );
