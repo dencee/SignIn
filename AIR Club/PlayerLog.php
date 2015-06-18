@@ -6,9 +6,9 @@
       AIR Club Player Sign-in
     </title>
     <style type="text/css" xml:space="preserve">
-      BODY, P,TD{ font-family: Arial,Verdana,Helvetica, sans-serif; font-size: 10pt }
-      A{font-family: Arial,Verdana,Helvetica, sans-serif;}
-      B {	font-family : Arial, Helvetica, sans-serif;	font-size : 12px;	font-weight : bold;}
+      BODY, P, TD{ font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 10pt }
+      A{ font-family: Arial, Verdana, Helvetica, sans-serif;}
+      B{ font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold;}
     </style>
     <script language="JavaScript" src="gen_validatorv4.js" type="text/javascript" xml:space="preserve">
     </script>
