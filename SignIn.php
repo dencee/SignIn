@@ -51,7 +51,7 @@ if($_POST['submit'] == "Submit Form")
 	      echo( "<p>ERROR: Unable to open player .csv file on server</p>\n" );
 	   }
 
-	   header("Location: test.php");
+	   header("Location: PlayerLog.php");
 	   exit;
 	}
 }
@@ -65,9 +65,10 @@ if($_POST['submit'] == "Submit Form")
       AIR Club Player Sign-in
     </title>
     <style type="text/css" xml:space="preserve">
-      BODY, P,TD{ font-family: Arial,Verdana,Helvetica, sans-serif; font-size: 10pt }
-      A{font-family: Arial,Verdana,Helvetica, sans-serif;}
-      B {	font-family : Arial, Helvetica, sans-serif;	font-size : 12px;	font-weight : bold;}
+      BODY, P, TD{ font-family: Arial,Verdana,Helvetica, sans-serif; font-size: 10pt }
+      A{ font-family: Arial, Verdana, Helvetica, sans-serif; }
+      B{ font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight : bold; }
+      a:visited{ color:inherit }
     </style>
     <script language="JavaScript" src="gen_validatorv4.js" type="text/javascript" xml:space="preserve">
     </script>
@@ -79,7 +80,7 @@ if($_POST['submit'] == "Submit Form")
       document.getElementById("date").innerHTML = Date.toLocaleString();
     </script>
     
-    <form action="SignIn.php" name="AIRSignForm" id="AIRSignForm" method="post">
+    <form action="SignIn.php" name="SignForm" id="SignForm" method="post">
       <table cellspacing="5" cellpadding="2" border="0">
         <tr>
           <td align="right">Name of player (print)</td>
@@ -107,7 +108,7 @@ if($_POST['submit'] == "Submit Form")
         </tr>
         <tr>
           <td align="right">
-            <a href="AIRClubTerms.html" target="_blank">
+            <a href="ClubTerms.html" target="_blank">
               Agree to Club terms
             </a>
           </td>
@@ -182,7 +183,7 @@ if($_POST['submit'] == "Submit Form")
         </tr>
         <tr>
           <td align="right">
-            <a href="test.php">
+            <a href="PlayerLog.php">
               <input type="button" value="Cancel" />
             </a>       
           </td>
