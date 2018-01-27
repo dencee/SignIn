@@ -4,6 +4,7 @@ void setup()
 {
   CoDrone.begin(115200);
 
+  // This connects to a specific Drone address
   byte droneAddress[6] = {0x8E, 0xF9, 0xAE, 0x6A, 0x1B, 0xA8};
   CoDrone.AutoConnect(AddressInputDrone, droneAddress);
 }
@@ -21,23 +22,56 @@ void JoystickControl()
   }
 }
 
+void RightTurn( int delayMs = 1000 ) {
+  CoDrone.Control();
+  delay(delayMs);
+}
+
+void LeftTurn( int delayMs = 1000 ) {
+  CoDrone.Control();
+  delay(delayMs);
+}
+
+void Hover( int delayMs = 0 ) {
+  CoDrone.Control();
+  delay(delayMs);
+}
+
+void Straight( int delayMs = 1000 ) {
+  CoDrone.Control();
+  delay(delayMs);
+}
+
+void Up( int delayMs = 1000 ) {
+  CoDrone.Control();
+  delay(delayMs);
+}
+
+void Down( int delayMs = 1000 ) {
+  CoDrone.Control();
+  delay(delayMs);
+}
+
 void loop()
 {
-  if (PAIRING == true)  // Check to see that we are paired before trying to fly               
+  // Check to see that we are paired before trying to fly
+  if (PAIRING == true)
   {
     byte bt1 = digitalRead(11);
     byte bt4 = digitalRead(14);
     byte bt8 = digitalRead(18);
 
+    // Kill switch - IR 11 covered only
     if (bt1 && !bt4 && !bt8)
     {
       CoDrone.FlightEvent(Stop);
     }
 
     if (!bt1 && !bt4 && !bt8) {
+      // If no IR sensors are covered allow the joystick to be used
       JoystickControl();
     } else {
-      // Code here
+      // Your code here
         
     }
   }
