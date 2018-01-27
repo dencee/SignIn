@@ -1,0 +1,44 @@
+#include <CoDrone.h>
+
+void setup()
+{
+  CoDrone.begin(115200);
+
+  byte droneAddress[6] = {0x8E, 0xF9, 0xAE, 0x6A, 0x1B, 0xA8};
+  CoDrone.AutoConnect(AddressInputDrone, droneAddress);
+}
+
+void JoystickControl()
+{
+  if (PAIRING == true)
+  {
+    YAW = -1 * CoDrone.AnalogScaleChange(analogRead(A3));
+    THROTTLE  = CoDrone.AnalogScaleChange(analogRead(A4));
+    ROLL = -1 * CoDrone.AnalogScaleChange(analogRead(A5));
+    PITCH = CoDrone.AnalogScaleChange(analogRead(A6));
+ 
+    CoDrone.Control();
+  }
+}
+
+void loop()
+{
+  if (PAIRING == true)  // Check to see that we are paired before trying to fly               
+  {
+    byte bt1 = digitalRead(11);
+    byte bt4 = digitalRead(14);
+    byte bt8 = digitalRead(18);
+
+    if (bt1 && !bt4 && !bt8)
+    {
+      CoDrone.FlightEvent(Stop);
+    }
+
+    if (!bt1 && !bt4 && !bt8) {
+      JoystickControl();
+    } else {
+      // Code here
+        
+    }
+  }
+}
